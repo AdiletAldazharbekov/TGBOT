@@ -20,12 +20,12 @@ bot.help(ctx => ctx.reply(text.commands))
 bot.command('course', async ctx => {
  try {
     await ctx.replyWithHTML(
-        '<b>Наши курсы</b>',
+        '<b>Курсы валют</b>',
         Markup.inlineKeyboard([
             // Markup.keyboard([
-                [Markup.button.callback('UX/UI', 'btn_ux')],
-                [Markup.button.callback('JS', 'btn_js')],
-                [Markup.button.callback('HTML', 'btn_html')]
+                [Markup.button.callback('USD', 'btn_usd')],
+                [Markup.button.callback('EUR', 'btn_eur')],
+                [Markup.button.callback('RUB', 'btn_rub')]
         ])
       )
  } catch (e) {
@@ -37,7 +37,7 @@ const handlerAction =(btnName, photo, txt)=>{
     bot.action(btnName, async ctx=>
     {
         try {
-            // await ctx.answerCbQuery() //убирает таймер с кнопки
+            await ctx.answerCbQuery() //убирает таймер с кнопки
             if (photo){
                 await ctx.replyWithPhoto({
                     source:photo,
@@ -51,9 +51,9 @@ const handlerAction =(btnName, photo, txt)=>{
     )
 }
 
-handlerAction('btn_ux','./img/news1.png',text.myTxt1)
-handlerAction('btn_js','./img/news2.png',text.myTxt2)
-handlerAction('btn_html','./img/news3.png',text.myTxt3)
+handlerAction('btn_usd',false,text.myTxt1)
+handlerAction('btn_eur',false,text.myTxt2)
+handlerAction('btn_rub',false,text.myTxt3)
 
 
 //Start

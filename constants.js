@@ -16,7 +16,7 @@ const myTxt3=`
 `
 
 const myTxt4=`
-0,8500 - 1,0500
+0,1600 - 1,2200
 `
 
 module.exports.commands=commands

@@ -25,7 +25,8 @@ bot.command('course', async ctx => {
             // Markup.keyboard([
                 [Markup.button.callback('USD', 'btn_usd')],
                 [Markup.button.callback('EUR', 'btn_eur')],
-                [Markup.button.callback('RUB', 'btn_rub')]
+                [Markup.button.callback('RUB', 'btn_rub')],
+                [Markup.button.callback('KZT', 'btn_kzt')]
         ])
       )
  } catch (e) {
@@ -54,6 +55,7 @@ const handlerAction =(btnName, photo, txt)=>{
 handlerAction('btn_usd',false,text.myTxt1)
 handlerAction('btn_eur',false,text.myTxt2)
 handlerAction('btn_rub',false,text.myTxt3)
+handlerAction('btn_kzt',false,text.myTxt4)
 
 
 //Start
